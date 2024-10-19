@@ -4,14 +4,15 @@ Command: npx gltfjsx@6.2.16 public/assets/models/Scene/escenaDePrueba2.gltf -o a
 */
 
 import React, { useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei"; //borre useAnimations
 
 export function IslasScene(props) {
 	const group = useRef();
-	const { nodes, materials, animations } = useGLTF(
+	const { nodes, materials } = useGLTF(
+		// borre animations
 		"/assets/models/Scene/escenaDePrueba2.gltf"
 	);
-	const { actions } = useAnimations(animations, group);
+	// const { actions } = useAnimations(animations, group);
 	return (
 		<group ref={group} {...props} dispose={null}>
 			<group name="Scene">

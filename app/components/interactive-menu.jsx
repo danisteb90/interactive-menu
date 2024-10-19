@@ -7,18 +7,20 @@ import { Experience } from "./experience";
 import { getProject } from "@theatre/core";
 import { PerspectiveCamera, SheetProvider } from "@theatre/r3f";
 
-import r3fExtension from "@theatre/r3f/dist/extension";
-import studio from "@theatre/studio";
+// import r3fExtension from "@theatre/r3f/dist/extension";
+// import studio from "@theatre/studio";
 
 import { editable as e } from "@theatre/r3f";
 
-import projectState from "@/app/assets/InteractiveMenu.json";
+import projectState from "../assets/InteractiveMenu.json";
 
-studio.initialize();
-studio.extend(r3fExtension);
-studio.ui.hide();
+// studio.initialize();
+// studio.extend(r3fExtension);
+// studio.ui.hide();
 
-const project = getProject("InteractiveMenu", projectState);
+const project = getProject("InteractiveMenu", {
+	state: projectState,
+});
 const mainSheet = project.sheet("Main");
 
 const transitions = {

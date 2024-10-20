@@ -4,80 +4,92 @@ Command: npx gltfjsx@6.2.16 public/assets/models/Scene/escenaDePrueba2.gltf -o a
 */
 
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei"; //borre useAnimations
+import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber"; // Importa useFrame
 
 export function IslasScene(props) {
 	const group = useRef();
+	const isla1Ref = useRef(); // Crea una referencia para el grupo isla1
 	const { nodes, materials } = useGLTF(
 		// borre animations
 		"/assets/models/Scene/escenaDePrueba2.gltf"
 	);
 	// const { actions } = useAnimations(animations, group);
+
+	// useFrame para rotar el grupo isla1
+	useFrame(() => {
+		if (isla1Ref.current) {
+			// isla1Ref.current.rotation.y += 0.01;
+		}
+	});
+
 	return (
 		<group ref={group} {...props} dispose={null}>
 			<group name="Scene">
-				<mesh
-					name="baseFinalIsla1"
-					geometry={nodes.baseFinalIsla1.geometry}
-					material={materials.baseTexIsla1}
-				/>
-				<group name="koiFinalIsla1">
+				<group ref={isla1Ref}>
 					<mesh
-						name="koiFinalIsla1_1"
-						geometry={nodes.koiFinalIsla1_1.geometry}
-						material={materials.koiTexIsla1}
-					/>
-					<mesh
-						name="koiFinalIsla1_2"
-						geometry={nodes.koiFinalIsla1_2.geometry}
-						material={materials.outlineTexIsla1}
-					/>
-				</group>
-				<group name="piedrasFinalIsla1">
-					<mesh
-						name="piedrasFinalIsla1_1"
-						geometry={nodes.piedrasFinalIsla1_1.geometry}
+						name="baseFinalIsla1"
+						geometry={nodes.baseFinalIsla1.geometry}
 						material={materials.baseTexIsla1}
 					/>
+					<group name="koiFinalIsla1">
+						<mesh
+							name="koiFinalIsla1_1"
+							geometry={nodes.koiFinalIsla1_1.geometry}
+							material={materials.koiTexIsla1}
+						/>
+						<mesh
+							name="koiFinalIsla1_2"
+							geometry={nodes.koiFinalIsla1_2.geometry}
+							material={materials.outlineTexIsla1}
+						/>
+					</group>
+					<group name="piedrasFinalIsla1">
+						<mesh
+							name="piedrasFinalIsla1_1"
+							geometry={nodes.piedrasFinalIsla1_1.geometry}
+							material={materials.baseTexIsla1}
+						/>
+						<mesh
+							name="piedrasFinalIsla1_2"
+							geometry={nodes.piedrasFinalIsla1_2.geometry}
+							material={materials.outlineTexIsla1}
+						/>
+					</group>
 					<mesh
-						name="piedrasFinalIsla1_2"
-						geometry={nodes.piedrasFinalIsla1_2.geometry}
-						material={materials.outlineTexIsla1}
+						name="planetaFinalIsla1"
+						geometry={nodes.planetaFinalIsla1.geometry}
+						material={materials.planetaTexIsla1}
 					/>
-				</group>
-				<mesh
-					name="planetaFinalIsla1"
-					geometry={nodes.planetaFinalIsla1.geometry}
-					material={materials.planetaTexIsla1}
-				/>
-				<group name="plantasFinalIsla1">
-					<mesh
-						name="plantasFinalIsla1001"
-						geometry={nodes.plantasFinalIsla1001.geometry}
-						material={materials.foliageTexIsla1}
-					/>
-					<mesh
-						name="plantasFinalIsla1001_1"
-						geometry={nodes.plantasFinalIsla1001_1.geometry}
-						material={materials.baseTexIsla1}
-					/>
-					<mesh
-						name="plantasFinalIsla1001_2"
-						geometry={nodes.plantasFinalIsla1001_2.geometry}
-						material={materials.outlineTexIsla1}
-					/>
-				</group>
-				<group name="waterFinalIsla1">
-					<mesh
-						name="waterFinalIsla1_1"
-						geometry={nodes.waterFinalIsla1_1.geometry}
-						material={materials.waterTexIsla1}
-					/>
-					<mesh
-						name="waterFinalIsla1_2"
-						geometry={nodes.waterFinalIsla1_2.geometry}
-						material={materials.outlineTexIsla1}
-					/>
+					<group name="plantasFinalIsla1">
+						<mesh
+							name="plantasFinalIsla1001"
+							geometry={nodes.plantasFinalIsla1001.geometry}
+							material={materials.foliageTexIsla1}
+						/>
+						<mesh
+							name="plantasFinalIsla1001_1"
+							geometry={nodes.plantasFinalIsla1001_1.geometry}
+							material={materials.baseTexIsla1}
+						/>
+						<mesh
+							name="plantasFinalIsla1001_2"
+							geometry={nodes.plantasFinalIsla1001_2.geometry}
+							material={materials.outlineTexIsla1}
+						/>
+					</group>
+					<group name="waterFinalIsla1">
+						<mesh
+							name="waterFinalIsla1_1"
+							geometry={nodes.waterFinalIsla1_1.geometry}
+							material={materials.waterTexIsla1}
+						/>
+						<mesh
+							name="waterFinalIsla1_2"
+							geometry={nodes.waterFinalIsla1_2.geometry}
+							material={materials.outlineTexIsla1}
+						/>
+					</group>
 				</group>
 				<mesh
 					name="accesoriosIsla2"

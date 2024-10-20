@@ -12,7 +12,8 @@ import { PerspectiveCamera, SheetProvider } from "@theatre/r3f";
 
 import { editable as e } from "@theatre/r3f";
 
-import projectState from "../assets/InteractiveMenu.json";
+// import projectState from "../assets/InteractiveMenu.json";
+import projectState from "../assets/InteractiveMenu2.json";
 
 // studio.initialize();
 // studio.extend(r3fExtension);
@@ -21,15 +22,19 @@ import projectState from "../assets/InteractiveMenu.json";
 const project = getProject("InteractiveMenu", {
 	state: projectState,
 });
-const mainSheet = project.sheet("Main");
+const mainSheet = project.sheet("Main2");
 
 const transitions = {
-	Home: [0, 5],
-	Isla1: [5, 12], //Cuando los frames no son enteros se debe poner de la sig forma [6, 12 + 16 / 30]
-	Isla2: [12, 19],
-	Isla3: [19, 26],
-	Isla4: [26, 33],
-	End: [33, 44],
+	Home: [0, 4],
+	Isla1: [4, 8], //Cuando los frames no son enteros se debe poner de la sig forma [6, 12 + 16 / 30]
+	InicioIsla1: [8, 12],
+	Isla2: [12, 16],
+	InicioIsla2: [16, 20],
+	Isla3: [20, 24],
+	InicioIsla3: [24, 28],
+	Isla4: [28, 32],
+	InicioIsla4: [32, 36],
+	// End: [33, 44],
 };
 
 export const InteractiveMenu = () => {

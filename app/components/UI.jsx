@@ -2,13 +2,19 @@ export const UI = ({ currentScreen, onChangeScreen, isAnimating }) => {
 	return (
 		<main className="fixed inset-0 z-10">
 			<section
-				className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-1000 ${
-					currentScreen === "Home" && !isAnimating
+				className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-1000 
+				${
+					(currentScreen === "Home" ||
+						currentScreen === "InicioIsla1" ||
+						currentScreen === "InicioIsla2" ||
+						currentScreen === "InicioIsla3" ||
+						currentScreen === "InicioIsla4") &&
+					!isAnimating
 						? ""
 						: "opacity-0 pointer-events-none"
 				}`}
 			>
-				<div className="flex flex-col gap-4 items-center justify-center mb-4">
+				<div className="fixed top-[200px] left-[50%] translate-x-[-50%] flex flex-col gap-4 items-center justify-center mb-4">
 					<h1 className="text-5xl text-white opacity-90 font-ex">
 						Bienvenidos a Escuela de Libertad
 					</h1>
@@ -16,13 +22,33 @@ export const UI = ({ currentScreen, onChangeScreen, isAnimating }) => {
 						lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
 						quos.
 					</p>
+					<div className="flex gap-6">
+						<button
+							onClick={() => onChangeScreen("Isla1")}
+							className="bg-gray-400 bg-opacity-50 p-3 rounded-full text-white font-medium"
+						>
+							Visita la Isla 1
+						</button>
+						<button
+							onClick={() => onChangeScreen("Isla2")}
+							className="bg-gray-400 bg-opacity-50 p-3 rounded-full text-white font-medium"
+						>
+							Visita la Isla 2
+						</button>
+						<button
+							onClick={() => onChangeScreen("Isla3")}
+							className="bg-gray-400 bg-opacity-50 p-3 rounded-full text-white font-medium"
+						>
+							Visita la Isla 3
+						</button>
+						<button
+							onClick={() => onChangeScreen("Isla4")}
+							className="bg-gray-400 bg-opacity-50 p-3 rounded-full text-white font-medium"
+						>
+							Visita la Isla 4
+						</button>
+					</div>
 				</div>
-				<button
-					onClick={() => onChangeScreen("Isla1")}
-					className="bg-gray-400 bg-opacity-50 p-3 rounded-full text-white font-medium"
-				>
-					Visita la Isla 1
-				</button>
 			</section>
 			<section
 				className={`absolute inset-0 flex flex-col items-start justify-center p-10 transition-opacity duration-1000 ${
@@ -42,10 +68,10 @@ export const UI = ({ currentScreen, onChangeScreen, isAnimating }) => {
 						Eu duis dolore deserunt consectetur consectetur enim.
 					</p>
 					<button
-						onClick={() => onChangeScreen("Isla2")}
+						onClick={() => onChangeScreen("InicioIsla1")}
 						className="bg-gray-400 bg-opacity-50  p-3 mt-3 rounded-full text-white font-medium"
 					>
-						Visita Isla 2
+						Regresar al inicio
 					</button>
 				</div>
 			</section>
@@ -67,10 +93,10 @@ export const UI = ({ currentScreen, onChangeScreen, isAnimating }) => {
 						Eu duis dolore deserunt consectetur consectetur enim.
 					</p>
 					<button
-						onClick={() => onChangeScreen("Isla3")}
+						onClick={() => onChangeScreen("InicioIsla2")}
 						className="bg-gray-400 bg-opacity-50  p-3 mt-3 rounded-full text-white font-medium"
 					>
-						Visita Isla 3
+						Regresar al inicio
 					</button>
 				</div>
 			</section>
@@ -92,10 +118,10 @@ export const UI = ({ currentScreen, onChangeScreen, isAnimating }) => {
 						Eu duis dolore deserunt consectetur consectetur enim.
 					</p>
 					<button
-						onClick={() => onChangeScreen("Isla4")}
+						onClick={() => onChangeScreen("InicioIsla3")}
 						className="bg-gray-400 bg-opacity-50  p-3 mt-3 rounded-full text-white font-medium"
 					>
-						Visita Isla 4
+						Regresar al inicio
 					</button>
 				</div>
 			</section>
@@ -117,10 +143,10 @@ export const UI = ({ currentScreen, onChangeScreen, isAnimating }) => {
 						Eu duis dolore deserunt consectetur consectetur enim.
 					</p>
 					<button
-						onClick={() => onChangeScreen("End")}
+						onClick={() => onChangeScreen("InicioIsla4")}
 						className="bg-gray-400 bg-opacity-50  p-3 mt-3 rounded-full text-white font-medium"
 					>
-						Volver al Inicio
+						Regresar al inicio
 					</button>
 				</div>
 			</section>

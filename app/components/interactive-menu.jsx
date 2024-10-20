@@ -13,7 +13,8 @@ import { PerspectiveCamera, SheetProvider } from "@theatre/r3f";
 import { editable as e } from "@theatre/r3f";
 
 // import projectState from "../assets/InteractiveMenu.json";
-import projectState from "../assets/InteractiveMenu2.json";
+// import projectState from "../assets/InteractiveMenu2.json";
+import projectState from "../assets/InteractiveMenu3.json";
 
 // studio.initialize();
 // studio.extend(r3fExtension);
@@ -22,7 +23,7 @@ import projectState from "../assets/InteractiveMenu2.json";
 const project = getProject("InteractiveMenu", {
 	state: projectState,
 });
-const mainSheet = project.sheet("Main2");
+const mainSheet = project.sheet("Mainv3");
 
 const transitions = {
 	Home: [0, 4],
